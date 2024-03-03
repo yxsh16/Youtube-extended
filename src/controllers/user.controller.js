@@ -5,6 +5,7 @@ import { uploadOnCloudinary } from '../utils/fileUpload.js';
 import { apiResponse } from '../utils/apiResponse.js';
 import jwt from 'jsonwebtoken';
 
+
 const generateAccessAndRefreshToken = async (userId) => {
    try{
       const user = await User.findById(userId)
@@ -20,6 +21,7 @@ const generateAccessAndRefreshToken = async (userId) => {
       throw new apiError(500, "Error generating tokens") 
    }
 } 
+
 
 const registerUser = asyncHandler( async (req, res) => {
       // get user details from frontend
@@ -92,7 +94,6 @@ const registerUser = asyncHandler( async (req, res) => {
       )
 
 })
-      
 
 
 const loginUser = asyncHandler( async (req, res) => {
@@ -152,6 +153,7 @@ const loginUser = asyncHandler( async (req, res) => {
       )
 
 })
+
 
 const logoutUser = asyncHandler(async(req, res) => {
    await User.findByIdAndUpdate(
