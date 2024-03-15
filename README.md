@@ -1,2 +1,2 @@
-# Backend for Youtube app in JavaScript
+# Backend for Youtube app in JavaScript-Express
 
